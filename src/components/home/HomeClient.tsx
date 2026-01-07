@@ -1,7 +1,7 @@
 'use client';
 
 import { useMemo, useState } from 'react';
-import MapPesantren from '@/components/mapPesantren/MapPesantren';
+import dynamic from 'next/dynamic';
 import type { Pesantren } from '@/types/pesantren';
 import PesantrenCard from '@/components/PesantrenCard/PesantrenCard';
 
@@ -70,7 +70,7 @@ export default function HomeClient({ data }: Props) {
         </div>
         <div className="p-4">
           <div className="h-130 w-full rounded-lg overflow-hidden">
-            <MapPesantren data={filtered} />
+            <MapPesantrenNoSSR data={filtered} />
           </div>
         </div>
       </section>
@@ -92,3 +92,13 @@ export default function HomeClient({ data }: Props) {
     </div>
   );
 }
+
+// Dynamic import of the Leaflet map to avoid SSR evaluating browser APIs
+const MapPesantrenNoSSR = dynamic(() => import('@/components/mapPesantren/MapPesantren'), {
+  ssr: false,
+  loading: () => (
+    <div className="flex h-full w-full items-center justify-center bg-gray-50 dark:bg-neutral-900">
+      <span className="text-sm text-gray-500">Memuat peta…</span>
+    </div>
+  ),
+});
