@@ -1,11 +1,12 @@
 import Image from 'next/image';
-import quran from '../../../public/quran.png';
-import calendar from '../../../public/calendar.png';
-import clock from '../../../public/clock.png';
-import mecca from '../../../public/mecca.png';
-import ramadhan from '../../../public/ramadhan.png';
-import sholat from '../../../public/sholat.png';
+import quran from '../../../../public/quran.png';
+import calendar from '../../../../public/calendar.png';
+import clock from '../../../../public/clock.png';
+import mecca from '../../../../public/mecca.png';
+import ramadhan from '../../../../public/ramadhan.png';
+import sholat from '../../../../public/sholat.png';
 import HeroTypewriter from './HeroTypewriter';
+import PrayerTimes from './PrayerTimes';
 
 export default function HomeHero() {
   return (
@@ -16,20 +17,17 @@ export default function HomeHero() {
             Indonesia • explore Pesantren
           </span>
           <HeroTypewriter
-            className="text-white text-center text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight"
-            text="Sejuta lebih Pesantren, Satu Indonesia."
+            className="text-white text-center text-1.5xl sm:text-4xl md:text-5xl font-bold tracking-tight"
+            text="Sejuta Pesantren, Satu Indonesia."
             typingSpeed={100}
             pauseBetween={1400}
             loop={false}
           />
-          <p className="max-w-2xl text-white text-center">
-            Temukan lokasi pondok pesantren di seluruh Indonesia. Gunakan pencarian dan filter untuk
-            menemukan pesantren berdasarkan nama, alamat, atau provinsi.
-          </p>
           <p className="text-white text-center">
             website ini dihadiahkan untuk seluruh umat islam di indonesia agar lebih mudah dalam
             menemukan lokasi pesantren
           </p>
+          <PrayerTimes />
           <div className="grid grid-cols-3 sm:gap-x-56 gap-x-12 gap-y-8 mt-10 place-items-center">
             <div className="group bg-white p-4 rounded-xl shadow-sm ring-1 ring-black/5 dark:ring-white/10 transition-transform duration-200 ease-out hover:shadow-md hover:-translate-y-0.5 hover:ring-emerald-500 active:scale-95 cursor-pointer">
               <Image

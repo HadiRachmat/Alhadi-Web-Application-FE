@@ -3,7 +3,7 @@
 import { useMemo, useState } from 'react';
 import dynamic from 'next/dynamic';
 import type { Pesantren } from '@/types/pesantren';
-import PesantrenCard from '@/components/PesantrenCard/PesantrenCard';
+import PesantrenCard from '@/components/organism/PesantrenCard/PesantrenCard';
 
 interface Props {
   data: Pesantren[];
@@ -94,7 +94,7 @@ export default function HomeClient({ data }: Props) {
 }
 
 // Dynamic import of the Leaflet map to avoid SSR evaluating browser APIs
-const MapPesantrenNoSSR = dynamic(() => import('@/components/mapPesantren/MapPesantren'), {
+const MapPesantrenNoSSR = dynamic(() => import('@/components/organism/mapPesantren/MapPesantren'), {
   ssr: false,
   loading: () => (
     <div className="flex h-full w-full items-center justify-center bg-gray-50 dark:bg-neutral-900">
