@@ -1,12 +1,16 @@
-import { pesantrenData } from '@/data/pesantren-data';
+// import { pesantrenData } from '@/data/pesantren-data';
 import HomeHero from '@/components/home/HomeHero';
-import HomeClient from '@/components/home/HomeClient';
+// import HomeClient from '@/components/home/HomeClient';
+import Navbar from '@/components/navbar/Navbar';
+import Feature from '@/components/home/Feature';
 
 export default function HomePage() {
   return (
-    <main className="pb-12 space-y-8">
+    <main className="pb-12">
+      <Navbar />
       <HomeHero />
-      <HomeClient data={pesantrenData} />
+      <Feature />
+      {/* <HomeClient data={pesantrenData} /> */}
     </main>
   );
 }

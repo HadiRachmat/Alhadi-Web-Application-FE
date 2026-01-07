@@ -10,7 +10,7 @@ export default function Navbar() {
           <span className="inline-flex h-8 w-8 items-center justify-center rounded-md bg-emerald-500 text-white font-bold">
             P
           </span>
-          <span>Peta Pesantren</span>
+          <span>Pesantren</span>
         </Link>
         <nav className="hidden sm:flex items-center gap-6 text-sm text-gray-600 dark:text-gray-300">
           <Link href="#peta" className="hover:text-foreground">
